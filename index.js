@@ -29,11 +29,48 @@ var src = ts.createSourceFile('test.ts', '', ts.ScriptTarget.ES5, false, ts.Scri
 
 var updated = ts.updateSourceFileNode(src, [varStatement, enumDec, ifDec, ifDec2]);
 
-// console.log(updated);
 
-var printer = ts.createPrinter();
+// var program = ts.createProgram([], { target: ts.ScriptTarget.ES5 }, {
+//   // getRootFileNames: function() {return []},
+//   getSourceFile: function() {
+//     return src
+//   },
+//   getCurrentDirectory: function() { return '' },
+//   useCaseSensitiveFileNames: function() { return true },
+//   getDefaultLibFileName: function() { return 'lib.d.ts' },
+//   getCanonicalFileName: ,
+//   getNewLine: function() { return '\n' },
+//   isEmitBlocked: function() {
+//     console.log('blocked?');
+//     return false;
+//   }
+// });
 
-var out = printer.printFile(updated);
-console.log(out);
+// var res = program.emit(undefined, console.log.bind(console), undefined, false);
+// console.log(res);
+
+// var host = {
+//   getCanonicalFileName: function() { return 'test.ts' },
+//   getCommonSourceDirectory: function() { return '' },
+//   getCompilerOptions: function() { return { target: ts.ScriptTarget.ES5 } },
+//   getCurrentDirectory: function () { return ''; },
+//   getNewLine: function() { return '\n' },
+//   getSourceFile: function() {
+//     return src
+//   },
+//   getSourceFileByPath: function() { console.log('noop'); },
+//   getSourceFiles: function() { console.log('getSourceFiles') },
+//   isSourceFileFromExternalLibrary: function() { console.log('is external', arguments) },
+//   writeFile: console.log.bind(console),
+//   isEmitBlocked: function() { return false },
+// };
+
+// var emitResolver = ts.getDiagnosticsProducingTypeChecker().getEmitResolver();
+// ts.emitFiles(emitResolver, host, src, false);
+
+// var printer = ts.createPrinter();
+
+// var out = printer.printFile(updated);
+// console.log(out);
 
 // console.log(ts.createBundle(['test']));
