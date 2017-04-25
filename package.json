@@ -1,0 +1,15 @@
+{
+  "name": "typescript-compiler",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Blaine Bublitz <blaine.bublitz@gmail.com> (https://github.com/phated)",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^2.3.0-dev.20170424"
+  }
+}
